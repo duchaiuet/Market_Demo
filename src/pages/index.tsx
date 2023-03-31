@@ -21,7 +21,7 @@ export default function Home({children}: AppProps) {
             <main className="flex flex-col bg-zinc-900 h-screen sm:overflow-hidden ">
                 <NavBar/>
                 <div className="flex flex-col sm:flex-row bg-zinc-900">
-                    <div className="w-full px-4 py-2 sm:w-[20%]">
+                    <div className="w-full px-4 py-2 sm:w-[30%]">
                         <SideFilter/>
                     </div>
                     <Market/>
