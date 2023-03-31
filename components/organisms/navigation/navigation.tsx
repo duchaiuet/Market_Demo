@@ -8,14 +8,14 @@ const NavBar = () => {
     const [showMenuDropDownChild, setShowMenuDropDownChild] = useState(false)
     return (
         <>
-            <nav className="top-0 z-40 flex-none w-full mx-auto bg-zinc-900 border-b border-gray-200 border-gray-600 ">
+            <nav className="sticky top-0 z-40 w-full mx-auto bg-zinc-900 border-b border-gray-200 border-gray-600 ">
                 <div className="flex items-center justify-between w-full px-3 py-3 mx-auto max-w-8xl lg:px-4">
                     <div className="flex items-center">
                         <div className="flex items-center justify-between">
                             <a href="#" className="flex">
-                                <img src="/bear-market.png" className="h-12 mr-3" alt=""/>
+                                <img src="/bear-market.png" className="sm:h-12 h-8 mr-3" alt=""/>
                                 <span
-                                    className="self-center text-2xl font-bold font-sans whitespace-nowrap dark:text-white">Market NFT</span>
+                                    className=" text-md self-center sm:text-2xl font-bold font-sans whitespace-nowrap dark:text-white">Market NFT</span>
                             </a>
                         </div>
                     </div>
@@ -35,16 +35,16 @@ const NavBar = () => {
                         {/*           placeholder="Search" required/>*/}
                         {/*</div>*/}
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center flex-wrap">
                         <button type="button" onClick={() => {}}
-                                className="text-gray-900 ml-2  hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 bg-zinc-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
-                            <FontAwesomeIcon className="mr-2 h-6 dark:text-white" icon={faCoins} />
-                            Buy Coin
+                                className="flex text-gray-900 ml-2  hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 bg-zinc-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
+                            <FontAwesomeIcon className="mr-2 sm:h-6 h-4 dark:text-white" icon={faCoins} />
+                            <p className="hidden sm:block">Buy Coin</p>
                         </button>
                         <button type="button" onClick={() => {setShowWalletDropDown(!showWalletDropDown)}}
                                 className="text-gray-900 ml-2 hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 bg-zinc-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
-                            <FontAwesomeIcon icon={faWallet} className="mr-2 h-6 dark:text-white" />
-                            Wallet Connect
+                            <FontAwesomeIcon icon={faWallet} className="mr-2 sm:h-6 h-4 dark:text-white" />
+                            <p className="hidden sm:block">Wallet Connect</p>
                         </button>
                     </div>
                 </div>

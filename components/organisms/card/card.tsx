@@ -61,8 +61,8 @@ const Card = (props: CardProps) => {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <img src="/coin.png" className="h-6 mr-2" alt=""/>
-                            <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                            599
+                            <span className="sm:text-2xl text-xl font-bold text-gray-900 dark:text-white">
+                            {props.price}
                         </span>
                         </div>
                         <button

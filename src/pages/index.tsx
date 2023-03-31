@@ -3,6 +3,7 @@ import NavBar from "../../components/organisms/navigation/navigation";
 import React from "react";
 import Market from "../../components/pages/market/market";
 import SideFilter from "../../components/organisms/sideFilter/sideFilter";
+
 interface AppProps {
     children: React.ReactNode
 }
@@ -16,10 +17,11 @@ export default function Home({children}: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/logo.png"/>
             </Head>
-            <main className=" h-screen overflow-hidden bg-zinc-900 flex flex-col">
+
+            <main className="flex flex-col bg-zinc-900 h-screen sm:overflow-hidden ">
                 <NavBar/>
-                <div className="flex flex-row">
-                    <div className=" w-[60%] px-4 py-2">
+                <div className="flex flex-col sm:flex-row bg-zinc-900">
+                    <div className="w-full px-4 py-2 sm:w-[20%]">
                         <SideFilter/>
                     </div>
                     <Market/>
