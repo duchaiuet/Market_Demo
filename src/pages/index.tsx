@@ -3,7 +3,8 @@ import NavBar from "../../components/organisms/navigation/navigation";
 import React from "react";
 import Market from "../../components/pages/market/market";
 import SideFilter from "../../components/organisms/sideFilter/sideFilter";
-
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from "react-toastify";
 interface AppProps {
     children: React.ReactNode
 }
@@ -18,15 +19,12 @@ export default function Home({children}: AppProps) {
                 <link rel="icon" href="/logo.png"/>
             </Head>
 
-            <main className="flex flex-col bg-zinc-900 h-screen sm:overflow-hidden ">
+            <main className="flex flex-col bg-[#212121] h-screen sm:overflow-hidden">
+                <ToastContainer />
                 <NavBar/>
-                <div className="flex flex-col sm:flex-row bg-zinc-900">
-                    <div className="w-full px-4 py-2 sm:w-[30%]">
-                        <SideFilter/>
-                    </div>
+                <div className="flex flex-col overflow-y-scroll bg-zinc-900 overflow-x-hidden border-[1px] rounded-md border-gray-600 mx-8 my-5">
                     <Market/>
                 </div>
-
             </main>
         </>
     )

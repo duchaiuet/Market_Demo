@@ -1,24 +1,34 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import LabelCus from "../../atoms/label/labelCus";
 import Star from "../../atoms/star/star";
+import {toast} from 'react-toastify';
 
 interface CardProps {
     title: String,
     vote: number,
     price: number,
     medal: number,
+    img?: string,
 
 }
 
 const Card = (props: CardProps) => {
+    const AddToCart = () => {
+        toast.info("add to cart", {
+            position : "bottom-right"
+        })
+    }
+
     return (
         <>
-            <div className="flex flex-col m-3 w-full bg-gradient-to-t from-zinc-950 to-zinc-800 max-w-sm bg-zi rounded-lg shadow dark:bg-black dark:border-gray-700">
+            <div
+                className="flex flex-col m-3 w-full bg-gradient-to-t from-zinc-900 to-zinc-800 max-w-sm bg-zi rounded-lg shadow dark:bg-black dark:border-gray-700">
                 <div className="flex items-center">
-                    {props.medal === 1 && <img src="/medal/medal_gold.png" className="h-14 p-3" alt=""/> }
-                    {props.medal === 2 && <img src="/medal/medal_ag.png" className="h-14 p-3" alt=""/> }
-                    {props.medal === 3 && <img src="/medal/medal_cu.png" className="h-14 p-3" alt=""/> }
-                    <LabelCus fontSize={10} content="CHARACTER" className={` bg-gradient-to-r from-yellow-300 to-orange-400 flex flex-wrap border border-yellow-500  rounded px-1 h-auto w-26`}/>
+                    {props.medal === 1 && <img src="/medal/medal_gold.png" className="h-14 p-3" alt=""/>}
+                    {props.medal === 2 && <img src="/medal/medal_ag.png" className="h-14 p-3" alt=""/>}
+                    {props.medal === 3 && <img src="/medal/medal_cu.png" className="h-14 p-3" alt=""/>}
+                    <LabelCus fontSize={10} content="CHARACTER"
+                              className={` bg-gradient-to-r from-yellow-300 to-orange-400 flex flex-wrap border border-yellow-500  rounded px-1 h-auto w-26`}/>
                 </div>
                 <a href="#">
                     <img className="p-8 rounded-t-lg"
@@ -46,9 +56,9 @@ const Card = (props: CardProps) => {
                             {props.price}
                         </span>
                         </div>
-                        <button
-                            className="flex text-white bg-yellow-800 hover:bg-blue-800  focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-yellow-700">
-                            Add to cart
+                        <button onClick={()=>{AddToCart()}}
+                                className="flex text-white bg-yellow-800 hover:bg-blue-800  focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-yellow-700">
+                                Add to cart
                         </button>
                     </div>
                 </div>
